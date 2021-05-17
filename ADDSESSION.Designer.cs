@@ -417,6 +417,7 @@ namespace ITPM
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
+            this.button3.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.button3.Location = new System.Drawing.Point(689, 488);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(158, 51);
@@ -428,6 +429,7 @@ namespace ITPM
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.button2.Location = new System.Drawing.Point(482, 488);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 51);
