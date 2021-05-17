@@ -37,11 +37,21 @@ namespace ITPM
             System.Windows.Forms.Label label4;
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label emIdLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADDSESSION));
             System.Windows.Forms.Label label7;
             System.Windows.Forms.Label label6;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADDSESSION));
             this.panel3 = new System.Windows.Forms.Panel();
+            this.typecomboBox1 = new System.Windows.Forms.ComboBox();
+            this.ducomBox1 = new System.Windows.Forms.ComboBox();
             this.addsesDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addsesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lectDataSet3 = new ITPM.lectDataSet3();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -49,8 +59,6 @@ namespace ITPM
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.addsesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lectDataSet2 = new ITPM.lectDataSet2();
             this.labelSes = new System.Windows.Forms.Label();
             this.numStudTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -62,20 +70,12 @@ namespace ITPM
             this.SubComboBox = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.addsesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lectDataSet2 = new ITPM.lectDataSet2();
             this.addsesTableAdapter = new ITPM.lectDataSet2TableAdapters.addsesTableAdapter();
             this.tableAdapterManager = new ITPM.lectDataSet2TableAdapters.TableAdapterManager();
             this.addsesTableAdapter1 = new ITPM.lectDataSet3TableAdapters.addsesTableAdapter();
             this.tableAdapterManager1 = new ITPM.lectDataSet3TableAdapters.TableAdapterManager();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typecomboBox1 = new System.Windows.Forms.ComboBox();
-            this.ducomBox1 = new System.Windows.Forms.ComboBox();
             label1 = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -172,6 +172,28 @@ namespace ITPM
             emIdLabel.Text = "SESSION ID:";
             emIdLabel.Click += new System.EventHandler(this.emIdLabel_Click);
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = System.Drawing.Color.Transparent;
+            label7.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.Location = new System.Drawing.Point(1036, 147);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(67, 29);
+            label7.TabIndex = 56;
+            label7.Text = "Type:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = System.Drawing.Color.Transparent;
+            label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Location = new System.Drawing.Point(995, 101);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(108, 29);
+            label6.TabIndex = 54;
+            label6.Text = "Duration:";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -207,6 +229,37 @@ namespace ITPM
             this.panel3.Size = new System.Drawing.Size(1480, 563);
             this.panel3.TabIndex = 6;
             // 
+            // typecomboBox1
+            // 
+            this.typecomboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typecomboBox1.FormattingEnabled = true;
+            this.typecomboBox1.Items.AddRange(new object[] {
+            "Lecture",
+            "Tutorial",
+            "Practicle",
+            "Viva",
+            "Evaluation"});
+            this.typecomboBox1.Location = new System.Drawing.Point(1116, 148);
+            this.typecomboBox1.Name = "typecomboBox1";
+            this.typecomboBox1.Size = new System.Drawing.Size(344, 30);
+            this.typecomboBox1.TabIndex = 57;
+            // 
+            // ducomBox1
+            // 
+            this.ducomBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ducomBox1.FormattingEnabled = true;
+            this.ducomBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.ducomBox1.Location = new System.Drawing.Point(1116, 102);
+            this.ducomBox1.Name = "ducomBox1";
+            this.ducomBox1.Size = new System.Drawing.Size(344, 30);
+            this.ducomBox1.TabIndex = 55;
+            // 
             // addsesDataGridView1
             // 
             this.addsesDataGridView1.AutoGenerateColumns = false;
@@ -228,6 +281,71 @@ namespace ITPM
             this.addsesDataGridView1.Size = new System.Drawing.Size(974, 251);
             this.addsesDataGridView1.TabIndex = 49;
             this.addsesDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.addsesDataGridView1_CellContentClick);
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "sesID";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Session ID";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "lecname";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Lecturer Name";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "asslecname";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Assistent Lecturer Name";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "grup";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Group";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "subj";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Subject";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "numstd";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Stidents Count";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "duration";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Duration";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "typ";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 125;
             // 
             // addsesBindingSource1
             // 
@@ -255,6 +373,7 @@ namespace ITPM
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
             this.button7.Location = new System.Drawing.Point(12, 221);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(158, 51);
@@ -266,6 +385,7 @@ namespace ITPM
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.Transparent;
+            this.button8.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.button8.Location = new System.Drawing.Point(12, 12);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(158, 51);
@@ -277,6 +397,7 @@ namespace ITPM
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
             this.button6.Location = new System.Drawing.Point(12, 147);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(158, 51);
@@ -288,6 +409,7 @@ namespace ITPM
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
             this.button5.Location = new System.Drawing.Point(12, 81);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(158, 51);
@@ -295,16 +417,6 @@ namespace ITPM
             this.button5.Text = "ADD SUBJECT";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // addsesBindingSource
-            // 
-            this.addsesBindingSource.DataMember = "addses";
-            this.addsesBindingSource.DataSource = this.lectDataSet2;
-            // 
-            // lectDataSet2
-            // 
-            this.lectDataSet2.DataSetName = "lectDataSet2";
-            this.lectDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // labelSes
             // 
@@ -317,6 +429,7 @@ namespace ITPM
             this.labelSes.Size = new System.Drawing.Size(74, 29);
             this.labelSes.TabIndex = 48;
             this.labelSes.Text = "label6";
+            this.labelSes.Click += new System.EventHandler(this.labelSes_Click);
             // 
             // numStudTextBox
             // 
@@ -438,6 +551,16 @@ namespace ITPM
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // addsesBindingSource
+            // 
+            this.addsesBindingSource.DataMember = "addses";
+            this.addsesBindingSource.DataSource = this.lectDataSet2;
+            // 
+            // lectDataSet2
+            // 
+            this.lectDataSet2.DataSetName = "lectDataSet2";
+            this.lectDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // addsesTableAdapter
             // 
             this.addsesTableAdapter.ClearBeforeFill = true;
@@ -457,124 +580,6 @@ namespace ITPM
             this.tableAdapterManager1.addsesTableAdapter = this.addsesTableAdapter1;
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager1.UpdateOrder = ITPM.lectDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "sesID";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Session ID";
-            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "lecname";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Lecturer Name";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "asslecname";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Assistent Lecturer Name";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "grup";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Group";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "subj";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Subject";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "numstd";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Stidents Count";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "duration";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Duration";
-            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "typ";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Type";
-            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.Width = 125;
-            // 
-            // typecomboBox1
-            // 
-            this.typecomboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.typecomboBox1.FormattingEnabled = true;
-            this.typecomboBox1.Items.AddRange(new object[] {
-            "Lecture",
-            "Tutorial",
-            "Practicle",
-            "Viva",
-            "Evaluation"});
-            this.typecomboBox1.Location = new System.Drawing.Point(1116, 148);
-            this.typecomboBox1.Name = "typecomboBox1";
-            this.typecomboBox1.Size = new System.Drawing.Size(344, 30);
-            this.typecomboBox1.TabIndex = 57;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.BackColor = System.Drawing.Color.Transparent;
-            label7.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.Location = new System.Drawing.Point(1036, 147);
-            label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(67, 29);
-            label7.TabIndex = 56;
-            label7.Text = "Type:";
-            // 
-            // ducomBox1
-            // 
-            this.ducomBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ducomBox1.FormattingEnabled = true;
-            this.ducomBox1.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6"});
-            this.ducomBox1.Location = new System.Drawing.Point(1116, 102);
-            this.ducomBox1.Name = "ducomBox1";
-            this.ducomBox1.Size = new System.Drawing.Size(344, 30);
-            this.ducomBox1.TabIndex = 55;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = System.Drawing.Color.Transparent;
-            label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label6.Location = new System.Drawing.Point(995, 101);
-            label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(108, 29);
-            label6.TabIndex = 54;
-            label6.Text = "Duration:";
             // 
             // ADDSESSION
             // 

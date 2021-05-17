@@ -139,6 +139,7 @@ namespace ITPM
         private void button2_Click(object sender, EventArgs e)
         {
             clear();
+            ADDSESSIONLOAD();
         }
         private void emIdLabel_Click(object sender, EventArgs e)
         {
@@ -386,6 +387,11 @@ namespace ITPM
             numStudTextBox.Text = row.Cells[5].Value.ToString();
             ducomBox1.Text = row.Cells[6].Value.ToString();
             typecomboBox1.Text = row.Cells[7].Value.ToString();
+
+        }
+
+        private void labelSes_Click(object sender, EventArgs e)
+        {
 
         }
     }
