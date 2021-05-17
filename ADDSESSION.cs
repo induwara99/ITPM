@@ -21,7 +21,7 @@ namespace ITPM
         private void ADDSESSIONLOAD()
         {
             // TODO: This line of code loads data into the 'lectDataSet.addlect' table. You can move, or remove it, as needed.
-            this.addsesTableAdapter.Fill(this.lectDataSet2.addses);
+            this.addsesTableAdapter1.Fill(this.lectDataSet3.addses);
             SqlConnection con = new SqlConnection();
 
             con.ConnectionString = "data source = ROG; database = lect; integrated security=True";
@@ -42,9 +42,10 @@ namespace ITPM
        
         private void ADDSESSION_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'lectDataSet3.addses' table. You can move, or remove it, as needed.
+            this.addsesTableAdapter1.Fill(this.lectDataSet3.addses);
             // TODO: This line of code loads data into the 'lectDataSet2.addses' table. You can move, or remove it, as needed.
             LoadData();
-            this.addsesTableAdapter.Fill(this.lectDataSet2.addses);
             ADDSESSIONLOAD();
             
         }
@@ -131,7 +132,9 @@ namespace ITPM
             AssNameComboBox.ResetText();
             groupComboBox.ResetText();
             SubComboBox.ResetText();
-           
+            ducomBox1.ResetText();
+            typecomboBox1.ResetText();
+
         }
         private void button2_Click(object sender, EventArgs e)
         {
@@ -157,18 +160,6 @@ namespace ITPM
 
         }
 
-        private void addsesDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            selectedRow = e.RowIndex;
-            DataGridViewRow row = addsesDataGridView.Rows[selectedRow];
-            labelSes.Text = row.Cells[0].Value.ToString();
-            lecNaComboBox.Text = row.Cells[1].Value.ToString();
-            AssNameComboBox.Text = row.Cells[2].Value.ToString();
-            groupComboBox.Text = row.Cells[3].Value.ToString();
-            SubComboBox.Text = row.Cells[4].Value.ToString();
-            numStudTextBox.Text = row.Cells[5].Value.ToString();
-            
-        }
 
         private void AssNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -208,8 +199,8 @@ namespace ITPM
             SqlDataAdapter da = new SqlDataAdapter("select * from addses", con);
             DataSet ds = new DataSet();
             da.Fill(ds, "insert_data");
-            addsesDataGridView.DataSource = ds;
-            addsesDataGridView.DataMember = "insert_data";
+            addsesDataGridView1.DataSource = ds;
+            addsesDataGridView1.DataMember = "insert_data";
             con.Close();
 
         }
@@ -230,10 +221,12 @@ namespace ITPM
             String grup = groupComboBox.Text;
             String subj = SubComboBox.Text;
             int numstd = int.Parse(numStudTextBox.Text);
+            int duration = int.Parse(ducomBox1.Text);
+            String typ = typecomboBox1.Text;
 
             if (Mode == true)
             {
-                sql = "insert into addses(lecname,asslecname,grup,subj,numstd) values ('" + lecname + "','" + asslecname + "','" + grup + "','" + subj + "','" + numstd + "')";
+                sql = "insert into addses(lecname,asslecname,grup,subj,numstd,duration,typ) values ('" + lecname + "','" + asslecname + "','" + grup + "','" + subj + "','" + numstd + "','" + duration + "','" + typ + "')";
                 con.Open();
                 cmd = new SqlCommand(sql, con);
 
@@ -242,6 +235,8 @@ namespace ITPM
                 cmd.Parameters.AddWithValue("@grup", grup);
                 cmd.Parameters.AddWithValue("@subj", subj);
                 cmd.Parameters.AddWithValue("@numstd", numstd);
+                cmd.Parameters.AddWithValue("@duration", duration);
+                cmd.Parameters.AddWithValue("@typ", typ);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("All Session Details are Recorded Successfuly.");
@@ -284,11 +279,20 @@ namespace ITPM
             {
                 MessageBox.Show("Please Enter the Amoun Of Students Partisipating to the Lecturer!!");
             }
+            else if (ducomBox1.Text == "")
+            {
+                MessageBox.Show("Please Enter Time Duration!!");
+            }
+            else if (typecomboBox1.Text == "")
+            {
+                MessageBox.Show("Please Enter the Session Type!!");
+            }
             else
             {
                 insertDetails();
                 load();
             }
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -304,11 +308,13 @@ namespace ITPM
             String grup = groupComboBox.Text;
             String subj = SubComboBox.Text;
             int numstd = int.Parse(numStudTextBox.Text);
+            int duration = int.Parse(ducomBox1.Text);
+            String typ = typecomboBox1.Text;
 
             if (Mode == true)
             {
-
-                sql = "UPDATE addses set lecname = @lecname, asslecname= @asslecname, grup= @grup, subj = @subj, numstd = @numstd where sesID = '" + labelSes.Text + "'";
+                
+               sql = "UPDATE addses set lecname = @lecname, asslecname= @asslecname, grup= @grup, subj = @subj, numstd = @numstd, duration = @duration, typ = @typ where sesID = '" + labelSes.Text + "'";
                 con.Open();
                 cmd = new SqlCommand(sql, con);
 
@@ -318,7 +324,9 @@ namespace ITPM
                 cmd.Parameters.AddWithValue("@grup", grup);
                 cmd.Parameters.AddWithValue("@subj", subj);
                 cmd.Parameters.AddWithValue("@numstd", numstd);
-               
+                cmd.Parameters.AddWithValue("@duration", duration);
+                cmd.Parameters.AddWithValue("@typ", typ);
+
                 //Execute the Query
                 cmd.ExecuteNonQuery();
                 MessageBox.Show(" All Session Details are Successfuly Updated!! ");
@@ -343,7 +351,7 @@ namespace ITPM
         string id;
         private void delete()
         {
-            id = addsesDataGridView.CurrentRow.Cells[0].Value.ToString();
+            id = addsesDataGridView1.CurrentRow.Cells[0].Value.ToString();
             sql = "delete from addses where sesID = '" + labelSes.Text + "'";
             con.Open();
             cmd = new SqlCommand(sql, con);
@@ -364,6 +372,21 @@ namespace ITPM
             this.Hide();
             SearchSession AD = new SearchSession();
             AD.Show();
+        }
+
+        private void addsesDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+            DataGridViewRow row = addsesDataGridView1.Rows[selectedRow];
+            labelSes.Text = row.Cells[0].Value.ToString();
+            lecNaComboBox.Text = row.Cells[1].Value.ToString();
+            AssNameComboBox.Text = row.Cells[2].Value.ToString();
+            groupComboBox.Text = row.Cells[3].Value.ToString();
+            SubComboBox.Text = row.Cells[4].Value.ToString();
+            numStudTextBox.Text = row.Cells[5].Value.ToString();
+            ducomBox1.Text = row.Cells[6].Value.ToString();
+            typecomboBox1.Text = row.Cells[7].Value.ToString();
+
         }
     }
 }

@@ -38,18 +38,17 @@ namespace ITPM
             System.Windows.Forms.Label label5;
             System.Windows.Forms.Label emIdLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ADDSESSION));
+            System.Windows.Forms.Label label7;
+            System.Windows.Forms.Label label6;
             this.panel3 = new System.Windows.Forms.Panel();
+            this.addsesDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.addsesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lectDataSet3 = new ITPM.lectDataSet3();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.addsesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addsesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lectDataSet2 = new ITPM.lectDataSet2();
             this.labelSes = new System.Windows.Forms.Label();
@@ -65,7 +64,18 @@ namespace ITPM
             this.button2 = new System.Windows.Forms.Button();
             this.addsesTableAdapter = new ITPM.lectDataSet2TableAdapters.addsesTableAdapter();
             this.tableAdapterManager = new ITPM.lectDataSet2TableAdapters.TableAdapterManager();
-            this.button7 = new System.Windows.Forms.Button();
+            this.addsesTableAdapter1 = new ITPM.lectDataSet3TableAdapters.addsesTableAdapter();
+            this.tableAdapterManager1 = new ITPM.lectDataSet3TableAdapters.TableAdapterManager();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typecomboBox1 = new System.Windows.Forms.ComboBox();
+            this.ducomBox1 = new System.Windows.Forms.ComboBox();
             label1 = new System.Windows.Forms.Label();
             fullNameLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
@@ -73,9 +83,13 @@ namespace ITPM
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             emIdLabel = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addsesDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addsesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lectDataSet3)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.addsesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addsesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lectDataSet2)).BeginInit();
             this.SuspendLayout();
@@ -118,7 +132,7 @@ namespace ITPM
             label3.AutoSize = true;
             label3.BackColor = System.Drawing.Color.Transparent;
             label3.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(946, 58);
+            label3.Location = new System.Drawing.Point(299, 184);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(157, 29);
             label3.TabIndex = 43;
@@ -140,7 +154,7 @@ namespace ITPM
             label5.AutoSize = true;
             label5.BackColor = System.Drawing.Color.Transparent;
             label5.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label5.Location = new System.Drawing.Point(881, 101);
+            label5.Location = new System.Drawing.Point(881, 56);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(222, 29);
             label5.TabIndex = 46;
@@ -163,8 +177,12 @@ namespace ITPM
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panel3.Controls.Add(this.typecomboBox1);
+            this.panel3.Controls.Add(label7);
+            this.panel3.Controls.Add(this.ducomBox1);
+            this.panel3.Controls.Add(label6);
+            this.panel3.Controls.Add(this.addsesDataGridView1);
             this.panel3.Controls.Add(this.panel1);
-            this.panel3.Controls.Add(this.addsesDataGridView);
             this.panel3.Controls.Add(this.labelSes);
             this.panel3.Controls.Add(emIdLabel);
             this.panel3.Controls.Add(label5);
@@ -186,8 +204,40 @@ namespace ITPM
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1471, 563);
+            this.panel3.Size = new System.Drawing.Size(1480, 563);
             this.panel3.TabIndex = 6;
+            // 
+            // addsesDataGridView1
+            // 
+            this.addsesDataGridView1.AutoGenerateColumns = false;
+            this.addsesDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.addsesDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.addsesDataGridView1.DataSource = this.addsesBindingSource1;
+            this.addsesDataGridView1.Location = new System.Drawing.Point(486, 226);
+            this.addsesDataGridView1.Name = "addsesDataGridView1";
+            this.addsesDataGridView1.RowHeadersWidth = 51;
+            this.addsesDataGridView1.RowTemplate.Height = 24;
+            this.addsesDataGridView1.Size = new System.Drawing.Size(974, 251);
+            this.addsesDataGridView1.TabIndex = 49;
+            this.addsesDataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.addsesDataGridView1_CellContentClick);
+            // 
+            // addsesBindingSource1
+            // 
+            this.addsesBindingSource1.DataMember = "addses";
+            this.addsesBindingSource1.DataSource = this.lectDataSet3;
+            // 
+            // lectDataSet3
+            // 
+            this.lectDataSet3.DataSetName = "lectDataSet3";
+            this.lectDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -202,10 +252,20 @@ namespace ITPM
             this.panel1.Size = new System.Drawing.Size(183, 563);
             this.panel1.TabIndex = 49;
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.Location = new System.Drawing.Point(12, 221);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(158, 51);
+            this.button7.TabIndex = 46;
+            this.button7.Text = "SEARCH SESSION";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.Transparent;
-            this.button8.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.button8.Location = new System.Drawing.Point(12, 12);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(158, 51);
@@ -217,7 +277,6 @@ namespace ITPM
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Transparent;
-            this.button6.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.button6.Location = new System.Drawing.Point(12, 147);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(158, 51);
@@ -229,7 +288,6 @@ namespace ITPM
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
-            this.button5.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.button5.Location = new System.Drawing.Point(12, 81);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(158, 51);
@@ -237,75 +295,6 @@ namespace ITPM
             this.button5.Text = "ADD SUBJECT";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // addsesDataGridView
-            // 
-            this.addsesDataGridView.AutoGenerateColumns = false;
-            this.addsesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.addsesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this.addsesDataGridView.DataSource = this.addsesBindingSource;
-            this.addsesDataGridView.Location = new System.Drawing.Point(483, 202);
-            this.addsesDataGridView.Name = "addsesDataGridView";
-            this.addsesDataGridView.RowHeadersWidth = 51;
-            this.addsesDataGridView.RowTemplate.Height = 24;
-            this.addsesDataGridView.Size = new System.Drawing.Size(976, 264);
-            this.addsesDataGridView.TabIndex = 48;
-            this.addsesDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.addsesDataGridView_CellClick);
-            this.addsesDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.addsesDataGridView_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "sesID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Session ID";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "lecname";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Lecturer";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "asslecname";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Assistant Lecturer";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "grup";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Group";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "subj";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Subject";
-            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "numstd";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Number Of Students";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // addsesBindingSource
             // 
@@ -332,7 +321,7 @@ namespace ITPM
             // numStudTextBox
             // 
             this.numStudTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numStudTextBox.Location = new System.Drawing.Point(1116, 103);
+            this.numStudTextBox.Location = new System.Drawing.Point(1116, 58);
             this.numStudTextBox.Name = "numStudTextBox";
             this.numStudTextBox.Size = new System.Drawing.Size(344, 28);
             this.numStudTextBox.TabIndex = 45;
@@ -420,7 +409,7 @@ namespace ITPM
             // 
             this.SubComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SubComboBox.FormattingEnabled = true;
-            this.SubComboBox.Location = new System.Drawing.Point(1116, 59);
+            this.SubComboBox.Location = new System.Drawing.Point(485, 185);
             this.SubComboBox.Name = "SubComboBox";
             this.SubComboBox.Size = new System.Drawing.Size(344, 30);
             this.SubComboBox.TabIndex = 36;
@@ -428,7 +417,6 @@ namespace ITPM
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.button3.Location = new System.Drawing.Point(689, 488);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(158, 51);
@@ -440,7 +428,6 @@ namespace ITPM
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.button2.Location = new System.Drawing.Point(482, 488);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 51);
@@ -459,31 +446,149 @@ namespace ITPM
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.UpdateOrder = ITPM.lectDataSet2TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // button7
+            // addsesTableAdapter1
             // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
-            this.button7.Location = new System.Drawing.Point(12, 221);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(158, 51);
-            this.button7.TabIndex = 46;
-            this.button7.Text = "SEARCH SESSION";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            this.addsesTableAdapter1.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager1
+            // 
+            this.tableAdapterManager1.addsesTableAdapter = this.addsesTableAdapter1;
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.UpdateOrder = ITPM.lectDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "sesID";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Session ID";
+            this.dataGridViewTextBoxColumn14.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "lecname";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Lecturer Name";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "asslecname";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Assistent Lecturer Name";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "grup";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Group";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "subj";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Subject";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "numstd";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Stidents Count";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "duration";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Duration";
+            this.dataGridViewTextBoxColumn12.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "typ";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn13.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.Width = 125;
+            // 
+            // typecomboBox1
+            // 
+            this.typecomboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.typecomboBox1.FormattingEnabled = true;
+            this.typecomboBox1.Items.AddRange(new object[] {
+            "Lecture",
+            "Tutorial",
+            "Practicle",
+            "Viva",
+            "Evaluation"});
+            this.typecomboBox1.Location = new System.Drawing.Point(1116, 148);
+            this.typecomboBox1.Name = "typecomboBox1";
+            this.typecomboBox1.Size = new System.Drawing.Size(344, 30);
+            this.typecomboBox1.TabIndex = 57;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = System.Drawing.Color.Transparent;
+            label7.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label7.Location = new System.Drawing.Point(1036, 147);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(67, 29);
+            label7.TabIndex = 56;
+            label7.Text = "Type:";
+            // 
+            // ducomBox1
+            // 
+            this.ducomBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ducomBox1.FormattingEnabled = true;
+            this.ducomBox1.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
+            this.ducomBox1.Location = new System.Drawing.Point(1116, 102);
+            this.ducomBox1.Name = "ducomBox1";
+            this.ducomBox1.Size = new System.Drawing.Size(344, 30);
+            this.ducomBox1.TabIndex = 55;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = System.Drawing.Color.Transparent;
+            label6.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label6.Location = new System.Drawing.Point(995, 101);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(108, 29);
+            label6.TabIndex = 54;
+            label6.Text = "Duration:";
             // 
             // ADDSESSION
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1471, 563);
+            this.ClientSize = new System.Drawing.Size(1480, 563);
             this.Controls.Add(this.panel3);
             this.Name = "ADDSESSION";
             this.Text = "ADD SESSION";
             this.Load += new System.EventHandler(this.ADDSESSION_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addsesDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addsesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lectDataSet3)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.addsesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addsesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lectDataSet2)).EndInit();
             this.ResumeLayout(false);
@@ -508,17 +613,25 @@ namespace ITPM
         private System.Windows.Forms.BindingSource addsesBindingSource;
         private lectDataSet2TableAdapters.addsesTableAdapter addsesTableAdapter;
         private lectDataSet2TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView addsesDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private lectDataSet3 lectDataSet3;
+        private System.Windows.Forms.BindingSource addsesBindingSource1;
+        private lectDataSet3TableAdapters.addsesTableAdapter addsesTableAdapter1;
+        private lectDataSet3TableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.DataGridView addsesDataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.ComboBox typecomboBox1;
+        private System.Windows.Forms.ComboBox ducomBox1;
     }
 }
