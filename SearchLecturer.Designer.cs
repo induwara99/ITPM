@@ -41,8 +41,9 @@ namespace ITPM
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.print = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -81,7 +82,7 @@ namespace ITPM
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(970, 377);
+            this.dataGridView1.Size = new System.Drawing.Size(970, 325);
             this.dataGridView1.TabIndex = 24;
             // 
             // Lectlvltxt
@@ -190,18 +191,6 @@ namespace ITPM
             this.panel1.Size = new System.Drawing.Size(181, 587);
             this.panel1.TabIndex = 30;
             // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Transparent;
-            this.button7.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
-            this.button7.Location = new System.Drawing.Point(11, 261);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(158, 51);
-            this.button7.TabIndex = 45;
-            this.button7.Text = "ADD SESSION";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
             // button8
             // 
             this.button8.BackColor = System.Drawing.Color.Transparent;
@@ -214,12 +203,37 @@ namespace ITPM
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Transparent;
+            this.button7.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
+            this.button7.Location = new System.Drawing.Point(11, 261);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(158, 51);
+            this.button7.TabIndex = 45;
+            this.button7.Text = "ADD SESSION";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // print
+            // 
+            this.print.BackColor = System.Drawing.Color.Transparent;
+            this.print.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
+            this.print.Location = new System.Drawing.Point(596, 529);
+            this.print.Name = "print";
+            this.print.Size = new System.Drawing.Size(158, 51);
+            this.print.TabIndex = 49;
+            this.print.Text = "Print";
+            this.print.UseVisualStyleBackColor = false;
+            this.print.Click += new System.EventHandler(this.print_Click);
+            // 
             // SearchLecturer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::ITPM.Properties.Resources.background__1_;
             this.ClientSize = new System.Drawing.Size(1195, 587);
+            this.Controls.Add(this.print);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -257,5 +271,6 @@ namespace ITPM
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button print;
     }
 }

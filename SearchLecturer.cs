@@ -124,5 +124,21 @@ namespace ITPM
             SearchSession AD = new SearchSession();
             AD.Show();
         }
+
+        private void printPreviewDialog1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void print_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PrintLecturer AD = new PrintLecturer();
+            AD.Show();
+
+
+        }
+
+        
     }
 }
